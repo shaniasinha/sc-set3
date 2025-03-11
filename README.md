@@ -20,12 +20,10 @@ To run this project locally, follow the steps below (replace [n] with the set nu
    ```
 
 ## Usage
-### Set 3:
-- Open `set2.ipynb` in Jupyter Notebook for problem set 2.
+- Open `set3.ipynb` in Jupyter Notebook for problem set 2.
 - Follow the steps outlined in the notebook to run simulations and re-create the results.
 
 ## Project Structure
-### Set 3:
 ```
 scientific-computing-group-1/
 │-- set_3/
@@ -41,7 +39,6 @@ scientific-computing-group-1/
 [*] note: `note` is note.
 
 ## Contributing
-### Set 3:
 <div align="left">
     <img src="set_3/misc/git-fame.png" alt="Git fame set 3" width="600"/>
 </div>

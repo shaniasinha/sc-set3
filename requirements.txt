@@ -3,6 +3,3 @@ matplotlib
 pandas
 scipy
 numba
-imageio
-glob
-os
