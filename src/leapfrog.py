@@ -1,9 +1,7 @@
-# Re-import necessary libraries after execution state reset
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.integrate import solve_ivp
 
-# Define the Leapfrog class with velocity at half-time steps
 class Leapfrog:
     def __init__(self, k=1.0, m=1.0, dt=0.01, T=10, x0=1.0, v0=0.0):
         self.k = k                              # Spring constant
@@ -304,4 +302,3 @@ class Leapfrog:
             plt.savefig("results/lf/lf_forcing_phase_space.png", bbox_inches="tight")
 
         plt.show()
-
