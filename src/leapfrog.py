@@ -118,7 +118,7 @@ class Leapfrog:
 
     def plot_results_leapfrog(self, savefig=False, with_forcing=False, omega=1.0):
         """Plot position, velocity, and energy using Leapfrog method."""
-        plt.figure(figsize=(10, 6))
+        plt.figure(figsize=(10, 6), dpi=300)
 
         time_full = np.arange(self.N + 1) * self.dt
 
@@ -158,7 +158,7 @@ class Leapfrog:
 
     def plot_position_many_k(self, k_values=[1.0], savefig=False):
         """Plot position vs time for different spring constants."""
-        plt.figure(figsize=(10, 4))
+        plt.figure(figsize=(10, 4), dpi=300)
 
         time_full = np.arange(self.N + 1) * self.dt
 
@@ -183,7 +183,7 @@ class Leapfrog:
 
     def plot_velocity_many_k(self, k_values=[1.0], savefig=False):
         """Plot velocity vs time for different spring constants."""
-        plt.figure(figsize=(10, 4))
+        plt.figure(figsize=(10, 4), dpi=300)
 
         time_full = np.arange(self.N + 1) * self.dt
 
@@ -208,7 +208,7 @@ class Leapfrog:
 
     def plot_energy_many_k(self, k_values=[1.0], savefig=False):
         """Plot energy conservation for different spring constants."""
-        plt.figure(figsize=(10, 4))
+        plt.figure(figsize=(10, 4), dpi=300)
 
         time_full = np.arange(self.N + 1) * self.dt
 
@@ -233,7 +233,7 @@ class Leapfrog:
 
     def plot_compare_methods(self, savefig=False):
         """Compare leapfrog and RK45 methods in terms of energy conservation."""
-        plt.figure(figsize=(10, 6))
+        plt.figure(figsize=(10, 6), dpi=300)
 
         time_full = np.arange(self.N + 1) * self.dt
 
@@ -283,7 +283,7 @@ class Leapfrog:
 
     def plot_phase_space(self, F0=1.0, omega_values=[0.8, 1.0, 1.2], savefig=False):
         """Plots the phase space (velocity vs. position) for different driving frequencies."""
-        plt.figure(figsize=(8, 6))
+        plt.figure(figsize=(8, 6), dpi=300)
         colors = ["red", "green", "blue"]
 
         for omega in omega_values:
