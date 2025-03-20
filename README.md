@@ -7,40 +7,45 @@ To run this project locally, follow the steps below (replace [n] with the set nu
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/shaniasinha/scientific-computing-group-1.git
-   cd scientific-computing-group-1
+   git clone https://github.com/shaniasinha/sc-set3.git
+   cd sc-set3
    ```
 2. Install dependencies:
    ```bash
-   pip install -r set_3/requirements.txt
+   pip install -r requirements.txt
    ```
 3. Run Jupyter Notebook:
    ```bash
-   jupyter notebook set_3/set3.ipynb
+   jupyter notebook set3.ipynb
    ```
 
 ## Usage
-- Open `set3.ipynb` in Jupyter Notebook for problem set 2.
+- Open `set3.ipynb` in Jupyter Notebook for problem set 3.
 - Follow the steps outlined in the notebook to run simulations and re-create the results.
 
 ## Project Structure
 ```
-scientific-computing-group-1/
-│-- set_3/
-   │-- set3.ipynb                                      # Jupyter notebook to run all code related to problem set 1
-   │-- requirements.txt                                # Dependencies
-   │-- src/                                            # Contains all classes and functions imported in the notebook
-   │   │-- example.py [*]
-   │-- results/                                        # Plots and animations 
-   │   │-- example_folder/
-   │-- misc/                                           # Contains the problem set handout file and git fame results
-   │-- archive/                                        # Earlier implementations that could be useful for later
+set_3/
+│-- set3.ipynb                            # Jupyter notebook to run all code related to problem set 3
+│-- requirements.txt                      # Dependencies
+│-- src/                                  # Contains all classes and functions imported in the notebook
+   │-- matrix_form_plot.py [*]
+   |-- eigenmodes.py
+   |-- direct_steady_state.py
+   |-- leapfrog.py
+   |-- video.py
+│-- results/                              # Plots and animations 
+   |-- direct_steady_state/                         
+   │-- leapfrog/
+   |-- misc/ [*]                          
+│-- misc/                                 # Contains the problem set handout file and git fame results
+   │-- archive/                           # Earlier implementations that could be useful for later
 ```
 [*] note: `note` is note.
 
 ## Contributing
 <div align="left">
-    <img src="set_3/misc/git-fame.png" alt="Git fame set 3" width="600"/>
+    <img src="misc/git-fame.png" alt="Git fame set 3" width="600"/>
 </div>
 
 ## Authors

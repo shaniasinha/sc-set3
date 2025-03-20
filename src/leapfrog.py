@@ -149,9 +149,9 @@ class Leapfrog:
         plt.tight_layout()
         if savefig:
             if with_forcing:
-                filepath = f"results/lf/lf_forcing_{omega}.png"
+                filepath = f"results/leapfrog/lf_forcing_{omega}.png"
             else:
-                filepath = "results/lf/lf_integration.png"
+                filepath = "results/leapfrog/lf_integration.png"
             plt.savefig(filepath, bbox_inches="tight")
             
         plt.show()
@@ -177,7 +177,7 @@ class Leapfrog:
 
         plt.tight_layout()
         if savefig:
-            plt.savefig("results/lf/lf_position_many_k.png", bbox_inches="tight")
+            plt.savefig("results/leapfrog/lf_position_many_k.png", bbox_inches="tight")
             
         plt.show()
 
@@ -202,7 +202,7 @@ class Leapfrog:
 
         plt.tight_layout()
         if savefig:
-            plt.savefig("results/lf/lf_velocity_many_k.png", bbox_inches="tight")
+            plt.savefig("results/leapfrog/lf_velocity_many_k.png", bbox_inches="tight")
             
         plt.show()
 
@@ -227,7 +227,7 @@ class Leapfrog:
 
         plt.tight_layout()
         if savefig:
-            plt.savefig("results/lf/lf_energy_many_k.png", bbox_inches="tight")
+            plt.savefig("results/leapfrog/lf_energy_many_k.png", bbox_inches="tight")
             
         plt.show()
 
@@ -277,19 +277,59 @@ class Leapfrog:
         plt.tight_layout()
 
         if savefig:
-            plt.savefig("results/lf/compare_methods.png", bbox_inches="tight")
+            plt.savefig("results/leapfrog/compare_methods.png", bbox_inches="tight")
             
         plt.show()
 
     def plot_phase_space(self, F0=1.0, omega_values=[0.8, 1.0, 1.2], savefig=False):
-        """Plots the phase space (velocity vs. position) for different driving frequencies."""
+        """
+        Plots the phase space (velocity vs. position) for different driving frequencies.
+        """
         plt.figure(figsize=(8, 6), dpi=300)
         colors = ["red", "green", "blue"]
-
+        
         for omega in omega_values:
+            color = colors.pop(0)
             self.solve_leapfrog_with_forcing(F0, omega)
-            plt.plot(self.x, self.v, label=f"ω = {omega}", color=colors.pop())
-
+            
+            # Plot the trajectory
+            plt.plot(self.x, self.v, label=f"ω = {omega}", color=color)
+            
+            # Add a single arrow at the end of the trajectory
+            arrow_idx = -2  
+            
+            # Only add arrow if there are enough points
+            if len(self.x) > 2:
+                # Get the position at the end of the trajectory
+                x_pos = self.x[arrow_idx]
+                y_pos = self.v[arrow_idx]
+                
+                # Calculate direction from the last two points
+                dx = self.x[-1] - self.x[arrow_idx]
+                dy = self.v[-1] - self.v[arrow_idx]
+                
+                # Normalize to get direction only
+                magnitude = np.sqrt(dx**2 + dy**2)
+                if magnitude > 0:
+                    dx = dx / magnitude
+                    dy = dy / magnitude
+                    
+                    # Add the arrow annotation without a visible tail
+                    plt.annotate("", 
+                        xy=(self.x[-1] + dx*0.1, self.v[-1] + dy*0.1), 
+                        xytext=(self.x[-1], self.v[-1]), 
+                        arrowprops=dict(
+                            arrowstyle="->",
+                            color=color,
+                            linewidth=2,
+                            shrinkA=0,
+                            shrinkB=0,
+                            mutation_scale=20
+                        ),
+                    )
+        
+        # Initial position and velocity
+        plt.plot(self.x[0], self.v[0], 'o', color='black', markersize=5, label=f'Initial ({self.x[0]}, {self.v[0]})')
         plt.xlabel("Position (x)", fontsize=16)
         plt.ylabel("Velocity (v)", fontsize=16)
         plt.xticks(fontsize=14)
@@ -297,8 +337,8 @@ class Leapfrog:
         # plt.title("Phase Space Plot (Resonance Behavior)")
         plt.legend()
         plt.grid()
-
+        
         if savefig:
-            plt.savefig("results/lf/lf_forcing_phase_space.png", bbox_inches="tight")
-
+            plt.savefig("results/leapfrog/phase_space_with_arrows.png", dpi=300, bbox_inches="tight")
+        
         plt.show()

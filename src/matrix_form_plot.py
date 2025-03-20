@@ -34,5 +34,5 @@ def plot_matrix_form():
                 xticklabels=False,
                 yticklabels=False)
     # plt.title("Heatmap of Matrix M")
-    plt.savefig("results/matrix_form_plot.png", bbox_inches="tight")
+    plt.savefig("results/misc/matrix_form_plot.png", bbox_inches="tight")
     plt.show()
