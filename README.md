@@ -35,6 +35,7 @@ set_3/
    |-- leapfrog.py
    |-- video.py
 │-- results/                              # Plots and animations 
+   |-- membrane_eigemodes                
    |-- direct_steady_state/                         
    │-- leapfrog/
    |-- misc/ [*]                          
