@@ -129,7 +129,7 @@ class EigenvalueProblem:
         self.eigenvalues, self.eigenvectors = eigvals, eigvecs
         return self.eigenvalues, self.eigenvectors, elapsed_time
 
-    def plot_eigenvectors(self, num_modes=9):
+    def plot_eigenvectors(self, num_modes=6):
         """
         Plot the eigenvectors (modes) of the eigenvalue problem.
 
@@ -140,7 +140,7 @@ class EigenvalueProblem:
             raise RuntimeError("Solve eigenproblem before plotting.")
 
         n = self.n
-        fig, axs = plt.subplots(3, 3, figsize=(15, 15))
+        fig, axs = plt.subplots(2, 3, figsize=(15, 10))
         axs = axs.flatten()
 
         valid_indices = np.isreal(self.eigenvalues) & (self.eigenvalues > 0)
@@ -159,6 +159,7 @@ class EigenvalueProblem:
 
         cbar_ax = fig.add_axes([0.92, 0.15, 0.02, 0.7])
 
+
         for i in range(actual_modes):
             mode = np.real(plot_eigenvectors[:, i].reshape(n, n))
 
@@ -169,13 +170,14 @@ class EigenvalueProblem:
             freq = np.sqrt(np.abs(plot_eigenvalues[i])) / (2 * np.pi)
 
             im = axs[i].imshow(mode, cmap='Spectral', origin='lower', vmin=global_min, vmax=global_max)
-            axs[i].set_title(f'Mode {i+1}, λ={np.real(plot_eigenvalues[i]):.2f}, f={freq:.2f} Hz', fontsize=14)
+            axs[i].set_title(f'λ={np.real(plot_eigenvalues[i]):.2f}, f={freq:.2f} Hz', fontsize=18)
             axs[i].axis('off')
 
         for i in range(actual_modes, len(axs)):
             axs[i].axis('off')
 
-        fig.colorbar(im, cax=cbar_ax, orientation='vertical')
+        cbar = fig.colorbar(im, cax=cbar_ax, orientation='vertical')
+        cbar.ax.tick_params(labelsize=18)
 
         plt.tight_layout(rect=[0, 0, 0.9, 1])
 
@@ -184,7 +186,7 @@ class EigenvalueProblem:
         plt.savefig(os.path.join(save_dir, f"{self.shape}_{self.dimensions}_{self.solver}.png"))
         plt.show()
 
-    def animate_eigenmodes(self, total_modes=9, frames=100, interval=100, save_as="animation"):
+    def animate_eigenmodes(self, total_modes=6, frames=100, interval=100, save_as="animation"):
         """
         Animate the eigenmodes of the eigenvalue problem.
 
@@ -199,7 +201,7 @@ class EigenvalueProblem:
 
         n = self.n
 
-        fig, axs = plt.subplots(3, 3, figsize=(12, 12))
+        fig, axs = plt.subplots(2, 3, figsize=(15, 10))
         axs = axs.flatten()
 
         modes = []
@@ -230,7 +232,7 @@ class EigenvalueProblem:
             cax = axs[mode_number].imshow(mode, cmap='Spectral', origin='lower', vmin=-1, vmax=1)
             images.append(cax)
 
-            axs[mode_number].set_title(f'Mode {mode_number+1}, λ={np.real(filtered_eigenvalues[mode_number]):.2f}')
+            axs[mode_number].set_title(f'λ={np.real(filtered_eigenvalues[mode_number]):.2f}')
             axs[mode_number].axis('off')
 
         plt.tight_layout()
