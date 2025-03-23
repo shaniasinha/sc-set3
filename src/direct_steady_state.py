@@ -105,8 +105,8 @@ def plot_steady_state_concentration(savefig=False):
 
     #Saving
     if savefig:
-        # plt.savefig("results/direct_steady_state/steady_state_concentration.png", bbox_inches='tight')
-        plt.savefig("results/direct_steady_state/steady_state_concentration.pgf", bbox_inches='tight')
+        plt.savefig("results/direct_steady_state/steady_state_concentration.png", bbox_inches='tight')
+        # plt.savefig("results/direct_steady_state/steady_state_concentration.pgf", bbox_inches='tight')
     
     # plt.savefig("results/direct_steady_state/steady_state_concentration.pgf", bbox_inches='tight')
     # plt.savefig("results/direct_steady_state/steady_state_concentration.png", bbox_inches='tight')
