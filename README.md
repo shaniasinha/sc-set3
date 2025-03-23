@@ -41,23 +41,23 @@ set_3/
 │-- misc/                                 # Contains the problem set handout file and git fame results
    │-- archive/                           # Earlier implementations that could be useful for later
 ```
-[*] note: `note` is note.
+[*] note: `matrix_form_plot.py` only creates a visualization to be used in the report. `misc/` stores the plot created by this python file.
 
 ## Contributing
 <!-- <div align="left">
     <img src="misc/git-fame.png" alt="Git fame set 3" width="600"/>
 </div> -->
 ```
-Total commits: 35
-Total ctimes: 306
-Total files: 15
-Total loc: 2026
+Total commits: 38
+Total ctimes: 317
+Total files: 14
+Total loc: 2098
 | Author         |   loc |   coms |   fils |  distribution   |
 |:---------------|------:|-------:|-------:|:----------------|
-| Salome Poulain |   979 |      6 |      4 | 48.3/17.1/26.7  |
-| Shania Sinha   |   852 |     15 |      9 | 42.1/42.9/60.0  |
-| MyriamBel2819  |   195 |     13 |      2 | 9.6/37.1/13.3   |
-| Salomé Poulain |     0 |      1 |      0 | 0.0/ 2.9/ 0.0   |
+| Salome Poulain |   977 |      6 |      3 | 46.6/15.8/21.4  |
+| Shania Sinha   |   939 |     18 |      9 | 44.8/47.4/64.3  |
+| MyriamBel2819  |   182 |     13 |      2 | 8.7/34.2/14.3   |
+| Salomé Poulain |     0 |      1 |      0 | 0.0/ 2.6/ 0.0   |
 ```
 
 ## Authors
