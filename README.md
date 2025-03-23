@@ -1,6 +1,6 @@
 # Scientific Computing (Group 1)
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 ## Installation
 To run this project locally, follow the steps below (replace [n] with the set number you want to access and run):
@@ -33,7 +33,6 @@ set_3/
    |-- eigenmodes.py
    |-- direct_steady_state.py
    |-- leapfrog.py
-   |-- video.py
 │-- results/                              # Plots and animations 
    |-- membrane_eigemodes                
    |-- direct_steady_state/                         
@@ -45,9 +44,21 @@ set_3/
 [*] note: `note` is note.
 
 ## Contributing
-<div align="left">
+<!-- <div align="left">
     <img src="misc/git-fame.png" alt="Git fame set 3" width="600"/>
-</div>
+</div> -->
+```
+Total commits: 35
+Total ctimes: 306
+Total files: 15
+Total loc: 2026
+| Author         |   loc |   coms |   fils |  distribution   |
+|:---------------|------:|-------:|-------:|:----------------|
+| Salome Poulain |   979 |      6 |      4 | 48.3/17.1/26.7  |
+| Shania Sinha   |   852 |     15 |      9 | 42.1/42.9/60.0  |
+| MyriamBel2819  |   195 |     13 |      2 | 9.6/37.1/13.3   |
+| Salomé Poulain |     0 |      1 |      0 | 0.0/ 2.9/ 0.0   |
+```
 
 ## Authors
 - Myriam Belkhatir
